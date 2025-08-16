@@ -10,7 +10,7 @@ const AdList = () => {
 
   useEffect(() => {
     const fetchAds = async () => {
-      const response = await axios.get('http://localhost:8000/api/ads');
+      const response = await axios.get('https://adsbackend.aldiresee.com/api/ads');
       setAds(response.data);
     };
     fetchAds();
@@ -21,7 +21,7 @@ const AdList = () => {
     if (confirmDelete) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:8000/api/ads/${id}`, {
+        await axios.delete(`https://adsbackend.aldiresee.com/api/ads/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -41,7 +41,7 @@ const AdList = () => {
         <Col key={ad._id} className="d-flex">
           <Card className="flex-fill">
             {ad.image && (
-              <Card.Img variant="top" src={`http://localhost:8000/uploads/${ad.image}`} alt={ad.title} />
+              <Card.Img variant="top" src={`https://adsbackend.aldiresee.com/uploads/${ad.image}`} alt={ad.title} />
             )}
             <Card.Body>
               <Card.Title>{ad.title}</Card.Title>

@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/auth/login', { login, password });
+      const response = await axios.post('https://adsbackend.aldiresee.com/auth/login', { login, password });
       localStorage.setItem('token', response.data.token);
       setRedirect(true);
     } catch (error) {

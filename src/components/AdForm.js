@@ -29,7 +29,7 @@ const AdForm = () => {
   image,
 });
 
-      await axios.post('http://localhost:8000/api/ads', formData, {
+      await axios.post('https://adsbackend.aldiresee.com/api/ads', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           // 'Content-Type': 'multipart/form-data',
