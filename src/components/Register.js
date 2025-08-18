@@ -19,7 +19,7 @@ const Register = () => {
     if (avatar) formData.append('avatar', avatar);
 
     try {
-      await axios.post('https://adsbackend.aldiresee.com/auth/register', formData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, formData);
       setRedirect(true);
     } catch (error) {
       console.error(error);

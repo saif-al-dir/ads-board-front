@@ -15,7 +15,7 @@ const EditAdForm = () => {
 
   useEffect(() => {
     const fetchAd = async () => {
-      const response = await axios.get(`https://adsbackend.aldiresee.com/api/ads/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/ads/${id}`);
       const ad = response.data;
       setTitle(ad.title);
       setContent(ad.content);
@@ -38,7 +38,7 @@ const EditAdForm = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`https://adsbackend.aldiresee.com/api/ads/${id}`, formData, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/ads/${id}`, formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

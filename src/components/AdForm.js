@@ -29,7 +29,7 @@ const AdForm = () => {
   image,
 });
 
-      await axios.post('https://adsbackend.aldiresee.com/api/ads', formData, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/ads`, formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           // 'Content-Type': 'multipart/form-data',
